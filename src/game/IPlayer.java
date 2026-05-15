@@ -1,0 +1,8 @@
+package game;
+
+public interface IPlayer {
+    public void resetHand();
+    public void addCard();
+    @Override
+    String toString();
+}
