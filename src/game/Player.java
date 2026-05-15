@@ -4,10 +4,12 @@ import java.util.ArrayList;
 public class Player implements IPlayer{
     ArrayList<Card> hand;
     int health;
+    boolean stand;
 
     public Player(){
         hand = new ArrayList<Card>();
         health = 3;
+        stand = false;
     }
     public void resetHand(){
         hand.clear();
@@ -16,7 +18,11 @@ public class Player implements IPlayer{
         hand.add(card);
     }
     @Override
-    String toString(){
-        
+    public String toString(){
+        StringBuffer output = new StringBuffer();
+        for(int i =0; i < hand.size();){
+            output.append("{");
+            
+        }
     }
 }
