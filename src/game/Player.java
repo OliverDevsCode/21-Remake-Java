@@ -63,10 +63,10 @@ public class Player implements IPlayer{
     @Override
     public String toString(){
         StringBuffer output = new StringBuffer();
-        for(int i =0; i < hand.size();){
+        for(int i =0; i < hand.size(); i++){
             Card toDisplay = hand.get(i);
             output.append("{");
-            output.append(toDisplay.toString());
+            output.append(toDisplay);
             output.append("}");
         }
         return output.toString();

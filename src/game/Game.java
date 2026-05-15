@@ -143,7 +143,7 @@ public class Game implements IGame {
     public void input(Player player) throws IllegalArgumentException{
         Scanner inputScanner = new Scanner(System.in);  
         System.out.println("Your hand:");
-        System.out.println(player.toString());
+        System.out.println(player);
         System.out.println("Hit (H) || Stand (S)");
         String userChoice = inputScanner.nextLine(); 
         if(userChoice == "H"){
