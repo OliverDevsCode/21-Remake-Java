@@ -34,8 +34,12 @@ public class Game implements IGame {
         while(!gameOver){
             startRound();
             while (!roundOver) {
+                System.out.println("===========================");
+                System.out.println("===========================");
                 input(players[0]);
+                System.out.println("===========================");
                 input(players[1]);
+                System.out.println("===========================");
                 if(players[0].stand == true && players[1].stand == true){
                     //CHECK WINNER
                     processRound();
@@ -58,9 +62,11 @@ public class Game implements IGame {
                 if(p1_dist < p2_dist){
                     //PLAYER 1 WINS
                     player2.health -= 1;
+                    System.out.println("PLAYER 1 WINS");
                 }else{
                     //PLAYER 2 WINDS
                     player1.health -= 1;
+                    System.out.println("PLAYER 2 WINS");
 
                 }
             }else{
@@ -70,18 +76,23 @@ public class Game implements IGame {
                 if(p1_dist < p2_dist){
                     //PLAYER 1 WINS
                     player2.health -= 1;
+                    System.out.println("PLAYER 1 WINS");
                 }else{
                     //PLAYER 2 WINDS
                     player1.health -= 1;
+                    System.out.println("PLAYER 2 WINS");
                 }
             }
         else{
             if(p1_dist < p2_dist){
                     //PLAYER 1 WINS
                     player2.health -= 1;
+                    System.out.println("PLAYER 1 WINS");
                 }else{
                     //PLAYER 2 WINDS
                     player1.health -= 1;
+                    System.out.println("PLAYER 2 WINS");
+
                 }
         }
     }
