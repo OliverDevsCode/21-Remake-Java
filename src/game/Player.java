@@ -65,7 +65,7 @@ public class Player implements IPlayer{
         StringBuffer output = new StringBuffer();
         for(int i =0; i < hand.size();){
             output.append("{");
-            output.append(card);
+            output.append(card.toString());
             output.append("}");
         }
         return output.toString();

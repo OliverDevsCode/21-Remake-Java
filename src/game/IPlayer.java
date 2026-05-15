@@ -5,7 +5,7 @@ public interface IPlayer {
     public void addCard(Card card);
     public void dealDamage(int health);
     public int handSum();
-    public int getValue();
+    public int getValue(CardValue value);
     String toString(Card card);
 }
 
