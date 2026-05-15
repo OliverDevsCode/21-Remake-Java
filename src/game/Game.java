@@ -9,11 +9,16 @@ public class Game implements IGame {
     Deck deck;
     Player winner;
 
-    public Game(int rounds,int startHealth){
+
+    /**
+     * Instanties the Game
+     * @param rounds - number of rounds
+     */
+    public Game(int rounds){
         target = 21; //hardcoded to 21 to start with
-        Player player1 = new Player(startHealth); //Player 1
+        Player player1 = new Player(rounds); //Player 1
         players[0] = player1;
-        Player player2 = new Player(startHealth); // Player 2
+        Player player2 = new Player(rounds); // Player 2
         players[1]= player2;
         roundOver = false;
         gameOver = false;
