@@ -1,5 +1,5 @@
 package game;
 
 public interface ICard {
-    public void getValue();
+    public CardValues getValue();
 }
