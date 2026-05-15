@@ -2,7 +2,6 @@ package game;
 
 public class Card implements ICard{
     CardValue value;
-
     /**
      * Create Instance of card
      * @param value - type CardValue

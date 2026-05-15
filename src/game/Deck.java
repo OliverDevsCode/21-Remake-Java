@@ -2,8 +2,8 @@ package game;
 import java.util.ArrayList;
 
 public class Deck implements IDeck {
-    ArrayList<Card>  deck;
-    ArrayList<Card> remaining;
+    ArrayList<Card>  deck; //ALL POSSIBLE CARDS
+    ArrayList<Card> remaining; //Card available during the round
 
     /**
     *Creates a version of the class
@@ -19,7 +19,7 @@ public class Deck implements IDeck {
         
     }
     /**
-    Returns a card from the remaining deck
+    *Returns a card from the remaining deck
     *@return Card
      */
     public Card getCard(){
