@@ -1,6 +1,6 @@
 package game;
 
-public enum CardValues {
+public enum CardValue {
     ACE,
     TWO,
     THREE,
