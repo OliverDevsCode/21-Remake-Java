@@ -9,19 +9,82 @@ public class Game implements IGame {
     Deck deck;
     Player winner;
 
-    public Game(int rounds){
+    public Game(int rounds,int startHealth){
         target = 21; //hardcoded to 21 to start with
-        Player player1 = new Player(); //Player 1
-        dealHand(player1);
+        Player player1 = new Player(startHealth); //Player 1
         players[0] = player1;
-        Player player2 = new Player(); // Player 2
-        dealHand(player2);
+        Player player2 = new Player(startHealth); // Player 2
         players[1]= player2;
         roundOver = false;
         gameOver = false;
         deck = new Deck();
         winner = null;
     }
+
+    /**
+     * Starts the game
+     */
+    public void startGame(){
+        while(!gameOver){
+            startRound();
+            while (!roundOver) {
+                input(players[0]);
+                input(players[1]);
+                if(players[0].stand == true && players[1].stand == true){
+                    //CHECK WINNER
+                    processRound();
+                    nextRound();
+                }
+            }
+        }
+    }
+
+    /**
+     * Calculates winner
+     */
+    public void processRound(){
+        Player player1 = players[0];
+        Player player2 = players[1];
+        int p1_dist = modulus(player1.handSum(), this.target);
+        int p2_dist = modulus(player2.handSum(), this.target);
+        if(player1.handSum() > 21){
+            if(player2.handSum() > 21){
+                if(p1_dist < p2_dist){
+                    //PLAYER 1 WINS
+                    player2.health -= 1;
+                }else{
+                    //PLAYER 2 WINDS
+                    player1.health -= 1;
+
+                }
+            }else{
+                //PLAYER 2 WINS
+            }
+        }else if(player2.handSum() > 21){
+                if(p1_dist < p2_dist){
+                    //PLAYER 1 WINS
+                    player2.health -= 1;
+                }else{
+                    //PLAYER 2 WINDS
+                    player1.health -= 1;
+                }
+            }
+        else{
+            if(p1_dist < p2_dist){
+                    //PLAYER 1 WINS
+                    player2.health -= 1;
+                }else{
+                    //PLAYER 2 WINDS
+                    player1.health -= 1;
+                }
+        }
+    }
+
+    private int modulus(int value,int target){
+        int distance = target - value;
+        return (int) Math.abs(distance);
+    }
+    
 
     /**
      * Resets:
@@ -32,6 +95,9 @@ public class Game implements IGame {
     public void startRound(){
         players[0].resetHand();
         players[1].resetHand();
+        dealHand(players[0]);
+        dealHand(players[1]);
+
         deck.reset();
         roundOver = false;
     }
@@ -70,6 +136,8 @@ public class Game implements IGame {
      */
     public void input(Player player) throws IllegalArgumentException{
         Scanner inputScanner = new Scanner(System.in);  
+        System.out.println("Your hand:");
+        System.out.println(player.toString());
         System.out.println("Hit (H) || Stand (S)");
         String userChoice = inputScanner.nextLine(); 
         if(userChoice == "H"){
