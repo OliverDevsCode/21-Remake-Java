@@ -1,5 +1,6 @@
 package game;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck implements IDeck {
     ArrayList<Card>  deck; //ALL POSSIBLE CARDS
@@ -43,7 +44,8 @@ public class Deck implements IDeck {
      */
     public int shuffle(){
         int max = remaining.size()-1;
-        int random = Math.round((int)Math.random()*max);
+        Random r = new Random();
+        int random = r.nextInt(max);
         return random;
     }
 }

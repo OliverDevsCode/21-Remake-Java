@@ -40,11 +40,18 @@ public class Game implements IGame {
                 System.out.println("===========================");
                 input(players[1]);
                 System.out.println("===========================");
+                System.out.println("===========================");
+                System.out.println("===========================");
                 if(players[0].stand == true && players[1].stand == true){
                     //CHECK WINNER
                     processRound();
                     nextRound();
                 }
+                System.out.println("===========================");
+                System.out.println("===========================");
+                System.out.println("===========================");
+                System.out.println("===========================");
+
             }
         }
     }
