@@ -15,6 +15,7 @@ public class Game implements IGame {
      * @param rounds - number of rounds
      */
     public Game(int rounds){
+        players = new Player[2];
         target = 21; //hardcoded to 21 to start with
         Player player1 = new Player(rounds); //Player 1
         players[0] = player1;
