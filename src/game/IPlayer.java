@@ -6,6 +6,6 @@ public interface IPlayer {
     public void dealDamage(int health);
     public int handSum();
     public int getValue(CardValue value);
-    String toString(Card card);
+    String toString();
 }
 
