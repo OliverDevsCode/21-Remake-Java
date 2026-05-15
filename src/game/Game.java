@@ -145,11 +145,11 @@ public class Game implements IGame {
         System.out.println("Your hand:");
         System.out.println(player);
         System.out.println("Hit (H) || Stand (S)");
-        String userChoice = inputScanner.nextLine(); 
-        if(userChoice == "H"){
+        String userChoice = inputScanner.next(); 
+        if(userChoice.equalsIgnoreCase("H")){
             Card toDeal = deck.getCard();
             player.addCard(toDeal);
-        }else if(userChoice == "S"){
+        }else if(userChoice.equalsIgnoreCase("S")){
             System.out.println("Standing");
             player.stand = true;
         }else{
