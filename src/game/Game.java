@@ -128,12 +128,11 @@ public class Game implements IGame {
      * Round Status
      */
     public void startRound(){
+        deck.reset();
         players[0].resetHand();
         players[1].resetHand();
         dealHand(players[0]);
         dealHand(players[1]);
-
-        deck.reset();
         roundOver = false;
     }
 
